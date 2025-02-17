@@ -37,7 +37,7 @@ params [
 ];
 
 [{(!isNil "KPLIB_sectors_all")}, {
-	_this params ["_object", "_canGarrison", "_initDelete", "_isMapObject"];
+	_this params ["_object", "_canGarrison", "_initDelete"];
 
 	// Find the nearest sector
 	private _sector = [KPLIB_objectsGrabber_radius, getPos _object] call KPLIB_fnc_getNearestSector;
@@ -108,4 +108,4 @@ params [
         deleteVehicle _object;
     };
 
-}, [_object, _canGarrison, _initDelete, _isMapObject]] call CBA_fnc_waitUntilAndExecute;
+}, [_object, _canGarrison, _initDelete]] call CBA_fnc_waitUntilAndExecute;
