@@ -1,8 +1,8 @@
 /*
     File: fn_registerSectorObject.sqf
     Author: PiG13BR - https://github.com/PiG13BR
-    Date: 2024-12-20
-    Last Update: 2024-12-20
+    Date: 2025-12-20
+    Last Update: 2025-02-17
     License: MIT License - http://www.opensource.org/licenses/MIT
 
     Description:
@@ -20,7 +20,6 @@
             _objects = nearestObjects [getPos this, ["classname_of_object"], 75, false];
             {[this] call KPLIB_fnc_registerSectorObject}forEach _objects;
 
-
     Parameter(s):
         _object - object that will be registered [OBJECT, defaults to objNull]
         _canGarrison - Spawning of static weapons is enabled for this object? (provided if the object classname is refered in KPLIB_staticsConfigs.sqf) [BOOL, defaults to true]
@@ -34,8 +33,7 @@ if (!isServer) exitWith {};
 params [
     ["_object", objNull, [ObjNull]],
     ["_canGarrison", true, [false]], // Only works for buildings or structures under KPLIB_staticsConfigs
-    ["_initDelete", true, [false]], // This will NOT work for map objects if it's TRUE
-    ["_isMapObject", false, [false]]
+    ["_initDelete", true, [false]] // This will NOT work for map objects if it's TRUE
 ];
 
 [{(!isNil "KPLIB_sectors_all")}, {
